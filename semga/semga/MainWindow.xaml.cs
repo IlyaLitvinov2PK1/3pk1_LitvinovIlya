@@ -28,8 +28,11 @@ namespace semga
             string path = "C:\\Users\\popov.am1241\\Desktop\\Bloknot";
             string[] files = Directory.GetFiles(path, "*.txt");
 
-            TxtPro3000.ItemsSource = files;
+            string path2 = "C:\\Users\\popov.am1241\\Desktop\\Bloknot";
+            string[] files2 = Directory.GetFiles(path2, "*.jpg");
 
+            TxtPro3000.ItemsSource = files;
+            TxtPro3000_Copy.ItemsSource = files2;
 
         }
 
@@ -68,21 +71,48 @@ namespace semga
             string path = "C:\\Users\\popov.am1241\\Desktop\\Bloknot";
             string[] files = Directory.GetFiles(path, "*.txt");
 
+            string path2 = "C:\\Users\\popov.am1241\\Desktop\\Bloknot";
+            string[] files2 = Directory.GetFiles(path, "*.jpg");
+
             TxtPro3000.ItemsSource = files;
+            TxtPro3000_Copy.ItemsSource = files2;
         }
 
         private void Delete_Bt_Click(object sender, RoutedEventArgs e)
         {
+            string selectedFile2 = TxtPro3000_Copy.SelectedItem as string;
             string selectedFile = TxtPro3000.SelectedItem as string;
+
+            if (selectedFile2 != null)
+            {
+                File.Delete($"{selectedFile2}");
+            }
+           
+  
+
             if (selectedFile != null)
             {
                 File.Delete($"{selectedFile}");
             }
-            else MessageBox.Show("Вы не выбрали файл");
+          
+
             string path = "C:\\Users\\popov.am1241\\Desktop\\Bloknot";
             string[] files = Directory.GetFiles(path, "*.txt");
 
+            string path2 = "C:\\Users\\popov.am1241\\Desktop\\Bloknot";
+            string[] files2 = Directory.GetFiles(path2, "*.jpg");
+
             TxtPro3000.ItemsSource = files;
+            TxtPro3000_Copy.ItemsSource = files2;
+        }
+        private void TxtPro3000_MouseDoubleClick2(object sender, MouseButtonEventArgs e)
+        {
+            string selectedFile = TxtPro3000_Copy.SelectedItem as string;
+            if (selectedFile != null)
+            {
+                ImageWindow imageWindow = new ImageWindow(selectedFile);
+                imageWindow.Show();
+            }
         }
     }
 }

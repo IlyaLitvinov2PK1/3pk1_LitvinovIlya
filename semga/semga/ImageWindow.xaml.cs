@@ -24,6 +24,19 @@ namespace semga
     {
         private string filePath;
         private bool isTextChanged;
+        public ImageWindow(string filePath)
+        {
+
+            InitializeComponent();
+            
+            var fs2 = new FileStream(filePath,
+                   FileMode.Open, FileAccess.Read);
+            StrokeCollection strokes = new StrokeCollection(fs2);
+            IK1.Strokes = strokes;
+
+            l1.Content = filePath;
+
+        }
         public ImageWindow()
         {
             InitializeComponent();
@@ -44,27 +57,18 @@ namespace semga
             // Show save file dialog box
             Nullable<bool> result = dlg.ShowDialog();
 
-            // Process save file dialog box results
-            if (result == true)
-            {
-                // Save document
-                string filename = dlg.FileName;
-                //get the dimensions of the ink control
-                int margin = (int)this.IK1.Margin.Left;
-                int width = (int)this.IK1.ActualWidth - margin;
-                int height = (int)this.IK1.ActualHeight - margin;
-                //render ink to bitmap
-                RenderTargetBitmap rtb =
-                new RenderTargetBitmap(width, height, 94d, 92d, PixelFormats.Default);
-                rtb.Render(IK1);
+           
 
-                using (FileStream fs = new FileStream(filename, FileMode.Create))
+
+                using (FileStream fs = new FileStream(dlg.FileName, FileMode.Create))
                 {
-                    BmpBitmapEncoder encoder = new BmpBitmapEncoder();
-                    encoder.Frames.Add(BitmapFrame.Create(rtb));
-                    encoder.Save(fs);
+
+                    IK1.Strokes.Save(fs);
                 }
-            }
+
+                
+
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

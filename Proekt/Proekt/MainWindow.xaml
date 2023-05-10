@@ -1,0 +1,76 @@
+﻿<Window x:Class="Proekt.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Proekt"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+
+    <Window.Resources>
+        <Storyboard x:Key="Go" x:Shared="False">
+            <DoubleAnimation  Storyboard.TargetProperty="(FrameworkElement.Opacity)" Storyboard.TargetName="B1" 
+                              BeginTime="00:00:00.00" From="1" To="0"  Duration="0:0:0.4"/>
+            <DoubleAnimation  Storyboard.TargetProperty="(FrameworkElement.Opacity)" Storyboard.TargetName="B2" 
+                              BeginTime="00:00:00.00" From="0" To="1"  Duration="0:0:0.4"/>
+            <DoubleAnimation  Storyboard.TargetProperty="(FrameworkElement.Opacity)" Storyboard.TargetName="Text1" 
+                              BeginTime="00:00:00.00" From="0" To="1"  Duration="0:0:0.4"/>
+           
+            <DoubleAnimation  Storyboard.TargetProperty="(FrameworkElement.Opacity)" Storyboard.TargetName="Text2" 
+                              BeginTime="00:00:10.00" From="0" To="1"  Duration="0:0:0.4"/>
+          
+            <DoubleAnimation  Storyboard.TargetProperty="(FrameworkElement.Opacity)" Storyboard.TargetName="Text3" 
+                              BeginTime="00:00:20.00" From="0" To="1"  Duration="0:0:0.4"/>
+           
+            <DoubleAnimation  Storyboard.TargetProperty="(FrameworkElement.Opacity)" Storyboard.TargetName="Text4" 
+                              BeginTime="00:00:30.00" From="0" To="1"  Duration="0:0:0.4"/>
+            <DoubleAnimation  Storyboard.TargetProperty="(FrameworkElement.Opacity)" Storyboard.TargetName="Text1" 
+                              BeginTime="00:00:40.00" From="1" To="0"  Duration="0:0:0.4"/>
+            <DoubleAnimation  Storyboard.TargetProperty="(FrameworkElement.Opacity)" Storyboard.TargetName="Text2" 
+                              BeginTime="00:00:40.00" From="1" To="0"  Duration="0:0:0.4"/>
+            <DoubleAnimation  Storyboard.TargetProperty="(FrameworkElement.Opacity)" Storyboard.TargetName="Text3" 
+                              BeginTime="00:00:40.00" From="1" To="0"  Duration="0:0:0.4"/>
+            <DoubleAnimation  Storyboard.TargetProperty="(FrameworkElement.Opacity)" Storyboard.TargetName="Text4" 
+                              BeginTime="00:00:40.00" From="1" To="0"  Duration="0:0:0.4"/>
+        </Storyboard>
+    </Window.Resources>
+    <Window.Background>
+        <ImageBrush ImageSource="гарри.jpg" x:Name="IB"/>
+    </Window.Background>
+   
+    <Grid>
+        
+            <Button x:Name="B1" Height="40" Content="Начать историю" HorizontalAlignment="Center" Background="{x:Null}" FontFamily="/Proekt;component/#Harry Potter (Russian Version of Gfdtk)" FontSize="30" FontWeight="Bold" BorderBrush="{x:Null}" Foreground="Black" Panel.ZIndex="3"  >
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="ButtonBase.Click">
+                    <BeginStoryboard Storyboard="{StaticResource Go}"/>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
+
+        <TextBlock Panel.ZIndex="2" Width="350" x:Name="Text1" Text="Впереди опасность, то же позади,&#10;
+Но две из нас помогут, ты только их найди.&#10;
+Одна вперед отправит, еще одна — назад,&#10;
+В двух — вино всего лишь, а еще в трех — яд.&#10;" Opacity="0" HorizontalAlignment="Center" FontFamily="/Proekt;component/#Harry Potter (Russian Version of Gfdtk)" FontSize="20"
+                   Background="#72FFFFFF" />
+        <TextBlock Panel.ZIndex="2" Width="350" x:Name="Text2" Text="Ты хочешь здесь остаться на долгие века?&#10;
+Тогда ищи — к тому же подсказка тебе дана.&#10;" Opacity="0" HorizontalAlignment="Center" FontFamily="/Proekt;component/#Harry Potter (Russian Version of Gfdtk)" FontSize="20"  Background="#72FFFFFF"  />
+        <TextBlock Panel.ZIndex="2"  Width="350" x:Name="Text3" Text="Во-первых, как бы ловко ни скрывался яд,&#10;
+Найти его несложно — от вина левый ряд. &#10;
+Второе — в крайних бутылях налито не одно и то ж,&#10;
+Но если вперед тебе надо, помощи зря ты ждешь.&#10;" Opacity="0" HorizontalAlignment="Center" FontFamily="/Proekt;component/#Harry Potter (Russian Version of Gfdtk)" FontSize="20" Background="#72FFFFFF" />
+        <TextBlock Width="350" x:Name="Text4" Text="Затем ни в большой, ни в малой смерти ты не найдешь,&#10;
+А если из второй слева и второй справа глотнешь,&#10;
+Сам убедишься — налито одно и то же в них,&#10;
+Хотя на взгляд они разные, но это уже в-четвертых"  Opacity="0" HorizontalAlignment="Center" FontFamily="/Proekt;component/#Harry Potter (Russian Version of Gfdtk)" FontSize="20" Background="#72FFFFFF" Panel.ZIndex="2" />
+
+
+        <Button Opacity="0" x:Name="B2" Content="Пропустить историю" HorizontalAlignment="Right" Background="{x:Null}" FontFamily="/Proekt;component/#Harry Potter (Russian Version of Gfdtk)" FontSize="22" FontWeight="Bold" BorderBrush="{x:Null}" Foreground="#FFCBB265"  >
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="ButtonBase.Click">
+                    <BeginStoryboard Storyboard="{StaticResource Go}"/>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
+    </Grid>
+</Window>

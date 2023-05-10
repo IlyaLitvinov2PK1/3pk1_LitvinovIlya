@@ -1,0 +1,15 @@
+C:\Users\popov.am1241\source\repos\Proekt\Proekt\bin\Debug\Proekt.exe.config
+C:\Users\popov.am1241\source\repos\Proekt\Proekt\bin\Debug\Proekt.exe
+C:\Users\popov.am1241\source\repos\Proekt\Proekt\bin\Debug\Proekt.pdb
+C:\Users\popov.am1241\source\repos\Proekt\Proekt\obj\Debug\Proekt.csprojAssemblyReference.cache
+C:\Users\popov.am1241\source\repos\Proekt\Proekt\obj\Debug\MainWindow.g.cs
+C:\Users\popov.am1241\source\repos\Proekt\Proekt\obj\Debug\App.g.cs
+C:\Users\popov.am1241\source\repos\Proekt\Proekt\obj\Debug\Proekt_MarkupCompile.cache
+C:\Users\popov.am1241\source\repos\Proekt\Proekt\obj\Debug\Proekt_MarkupCompile.lref
+C:\Users\popov.am1241\source\repos\Proekt\Proekt\obj\Debug\MainWindow.baml
+C:\Users\popov.am1241\source\repos\Proekt\Proekt\obj\Debug\Proekt.g.resources
+C:\Users\popov.am1241\source\repos\Proekt\Proekt\obj\Debug\Proekt.Properties.Resources.resources
+C:\Users\popov.am1241\source\repos\Proekt\Proekt\obj\Debug\Proekt.csproj.GenerateResource.cache
+C:\Users\popov.am1241\source\repos\Proekt\Proekt\obj\Debug\Proekt.csproj.CoreCompileInputs.cache
+C:\Users\popov.am1241\source\repos\Proekt\Proekt\obj\Debug\Proekt.exe
+C:\Users\popov.am1241\source\repos\Proekt\Proekt\obj\Debug\Proekt.pdb
